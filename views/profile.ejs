@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            background-color: rgb(123, 40, 196);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="container">
+            <header>
+                <h1>Chat App</h1>
+                <a href="/profile">Home</a>
+                <a href="/about">About Author</a>
+                <a href="/project">About project</a>
+                <a href="/auth/logout">Log out</a>
+            </header>
+        </div>
+    </nav>
+
+
+    <div class="centered-form col-md-12 col-xs-12" style="height: 79vh;">
+
+        <div class="centered-form__box">
+            <h4>Welcome
+                <%= user.username %>
+            </h4>
+
+
+            <h1>Join</h1>
+            <form action="/chat">
+                <label>Display name</label>
+                <input type="text" name="username" autocomplete="off" placeholder="Display name" required>
+                <label>Room</label>
+                <input type="text" name="room" autocomplete="off" placeholder="Room" required>
+                <button>Join</button>
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
