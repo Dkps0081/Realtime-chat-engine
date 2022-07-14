@@ -20,9 +20,8 @@
 <img src="./pictures/p1.png" width="1000"> <br>
 ## Sign in Page
 <img src="./pictures/p2.png" width="1000"> <br>
-## Join Meeting 
 <img src="./pictures/p3.png" width="1000"> <br>
-## Meeting Home
+## Join chat room
 <img src="./pictures/p4.png" width="1000"> <br>
 ## Chat Section
 <img src="./pictures/p6.png" width="1000" > <br> <img src="./pictures/p7.png" width="1000"> <br>
