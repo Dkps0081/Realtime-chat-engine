@@ -15,3 +15,18 @@
 ## Starting the server 
 - Open terminal and Run `npm start` to start the server.
 - Open http://localhost:3000 to view it in the browser.
+
+## Welcome Page
+<img src="./pictures/p1.png" width="1000"> <br>
+## Sign in Page
+<img src="./pictures/p2.png" width="1000"> <br>
+## Join Meeting 
+<img src="./pictures/p3.png" width="1000"> <br>
+## Meeting Home
+<img src="./pictures/p4.png" width="1000"> <br>
+## Chat Section
+<img src="./pictures/p6.png" width="1000" > <br> <img src="./pictures/p7.png" width="1000"> <br>
+## Collaborative White Board
+<img src="./pictures/p8.png" width="1000"> <br>
+## Meeting End
+<img src="./pictures/p9.png" width="1000"> <br>
