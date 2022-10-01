@@ -10,7 +10,7 @@ const passportSetup = require('../config/passport-setup');
 const authRoutes = require('../routes/auth_routes');
 const profileRoutes = require('../routes/profile-routes');
 const mongoose = require('mongoose');
-const keys = require('../config/keys');
+//const keys = require('../config/keys');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const session = require('express-session')
@@ -20,13 +20,14 @@ const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT
+const HOST = "localhost"
     //server.listen(3000);
 
 // set up session cookies
 app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
-    keys: [keys.session.cookieKey]
+    keys: [process.env.cookieKey]
 }));
 
 // initialize passport
@@ -36,7 +37,7 @@ app.use(passport.session());
 
 
 //connect to mongodb
-mongoose.connect(keys.mongoDB.dbURI, () => {
+mongoose.connect(process.env.dbURI, () => {
     console.log('connected to monodb');
 });
 
@@ -65,7 +66,7 @@ app.get('/project', (req, res) => {
 //const publicdir = path.join(__dirname, '../public')
 
 app.use(express.static('public'));
-server.listen(PORT, () => {
+server.listen(PORT, HOST, () => {
         console.log("server s up" + PORT)
     })
     // const path = require('path')
