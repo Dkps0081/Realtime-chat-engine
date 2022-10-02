@@ -12,13 +12,13 @@ passport.deserializeUser((id, done) => {
         done(null, user);
     });
 });
-const id = process.env.clientID;
+
 
 passport.use(
     new GoogleStrategy({
         //diff google strat
         callbackURL: '/auth/google/me',
-        clientID: id,
+        clientID: process.env.clientID,
         clientSecret: process.env.clientSecret
     }, (accessToken, refreshToken, profile, done) => {
         //passport call back
