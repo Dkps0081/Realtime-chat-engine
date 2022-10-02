@@ -18,7 +18,7 @@ passport.use(
     new GoogleStrategy({
         //diff google strat
         callbackURL: '/auth/google/me',
-        clientID: process.env.clientID,
+        //clientID: process.env.clientID,
         clientSecret: process.env.clientSecret
     }, (accessToken, refreshToken, profile, done) => {
         //passport call back

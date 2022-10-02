@@ -14,15 +14,15 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const session = require('express-session')
-
+require('dotenv').config();
 
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 
-const PORT = process.env.PORT
-const HOST = "localhost"
-    //server.listen(3000);
+// const PORT = process.env.PORT
+// const HOST = "localhost"
+//server.listen(3000);
 
 // set up session cookies
 app.use(cookieSession({
@@ -64,9 +64,10 @@ app.get('/project', (req, res) => {
 
 
 //const publicdir = path.join(__dirname, '../public')
-
+port = process.env.PORT
+host = process.env.HOST
 app.use(express.static('public'));
-server.listen(PORT, HOST, () => {
+server.listen(port, host, () => {
         console.log("server s up" + PORT)
     })
     // const path = require('path')
