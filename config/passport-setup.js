@@ -2,7 +2,7 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 //const keys = require('./keys');
 const User = require('../models/user-model');
-
+require('dotenv').config();
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
@@ -12,13 +12,13 @@ passport.deserializeUser((id, done) => {
         done(null, user);
     });
 });
-
+const id = process.env.clientID;
 
 passport.use(
     new GoogleStrategy({
         //diff google strat
         callbackURL: '/auth/google/me',
-        //clientID: process.env.clientID,
+        clientID: id,
         clientSecret: process.env.clientSecret
     }, (accessToken, refreshToken, profile, done) => {
         //passport call back

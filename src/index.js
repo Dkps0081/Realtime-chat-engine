@@ -13,8 +13,8 @@ const mongoose = require('mongoose');
 //const keys = require('../config/keys');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-const session = require('express-session')
-require('dotenv').config();
+const session = require('express-session');
+require('dotenv').config()
 
 const app = express()
 const server = http.createServer(app)
@@ -34,10 +34,10 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+const db = process.env.dbURL;
 
 //connect to mongodb
-mongoose.connect(process.env.dbURI, () => {
+mongoose.connect(db, () => {
     console.log('connected to monodb');
 });
 
@@ -68,7 +68,7 @@ port = process.env.PORT
 host = process.env.HOST
 app.use(express.static('public'));
 server.listen(port, host, () => {
-        console.log("server s up" + PORT)
+        console.log("server s up " + port)
     })
     // const path = require('path')
     // app.use('/static', express.static(path.join(__dirname, 'public')))
